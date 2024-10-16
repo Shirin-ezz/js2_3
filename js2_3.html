@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Speak Function Form</title>
+  <script>
+    // Define the speak function with a parameter 'prefix'
+    function speak(prefix) {
+      // Get the name from the input box
+      let name = document.getElementById('nameInput').value;
+      // Display an alert with the prefix and the name
+      alert(prefix + ' ' + name);
+    }
+  </script>
+</head>
+<body>
+  <!-- Create a form with an input box for the user's name -->
+  <form>
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput" name="nameInput">
+    <!-- Add buttons with event handlers assigned within the HTML code -->
+    <button type="button" onclick="speak('Hello')">Hello</button>
+    <button type="button" onclick="speak('Good Bye')">Good Bye</button>
+    <button type="button" onclick="speak('Greetings')">Greetings</button>
+  </form>
+</body>
+</html>
