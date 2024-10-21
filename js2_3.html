@@ -1,30 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greeting Form - Problem 3</title>
+    <title>Problem 3: Greeting Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        // Function with a prefix parameter
-        function speak(prefix) {
-            // Get the value from the input field
-            let name = document.getElementById("nameInput").value;
-            // Pop up an alert with the prefix and the name
-            alert(prefix + " " + name);
-        }
+        $(document).ready(function() {
+            function speak(prefix) {
+                let name = $("#nameInput").val();
+                alert(prefix + " " + name);
+            }
+
+            $("#helloButton").click(function() { speak("Hello"); });
+            $("#goodbyeButton").click(function() { speak("Good Bye"); });
+            $("#greetingsButton").click(function() { speak("Greetings"); });
+        });
     </script>
 </head>
 <body>
-    <!-- Form with input and buttons -->
     <form>
-        <!-- Input for user's name -->
         <label for="nameInput">Enter your name: </label>
         <input type="text" id="nameInput" name="nameInput" placeholder="Enter your name">
-
-        <!-- Buttons with inline event handlers that call speak() with the greeting prefix -->
-        <button type="button" onclick="speak('Hello')">Hello</button>
-        <button type="button" onclick="speak('Good Bye')">Good Bye</button>
-        <button type="button" onclick="speak('Greetings')">Greetings</button>
+        <button type="button" id="helloButton">Hello</button>
+        <button type="button" id="goodbyeButton">Good Bye</button>
+        <button type="button" id="greetingsButton">Greetings</button>
     </form>
 </body>
 </html>
